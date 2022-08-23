@@ -1,4 +1,6 @@
 #include <string.h>
+#include <stdlib.h>
+#include <stdio.h>
 #include "InsertLinkedList.h"
 
 linkedList_h* createLinkedList_h(void){
@@ -8,20 +10,11 @@ linkedList_h* createLinkedList_h(void){
 	return L;
 }
 
-void freelinkedList_h(linkedList_h* L){
-	listNode* p;
-	while(l->head!=NULL){
-		p = l->head;
-		l->head = l->head->link;
-		free(p);
-		p=NULL;
-	}
-}
 
-void printList(linkedList_h* L){:
+void printList(linkedList_h* L){
 	listNode* p;
 	printf("L = (");
-	p = L -> head;
+	p = L->head;
 	while(p != NULL){
 		printf("%s", p->data);
 		p=p->link;
@@ -30,7 +23,7 @@ void printList(linkedList_h* L){:
 	printf(") \n");
 }
 
-void insertFirstNode(linkedlist_h* L, char* x){
+void insertFirstNode(linkedList_h* L, char* x){
 	listNode* newNode;
 	newNode = (listNode*)malloc(sizeof(listNode));
 	strcpy(newNode->data, x);
@@ -38,7 +31,7 @@ void insertFirstNode(linkedlist_h* L, char* x){
 	L->head = newNode;
 }
 
-void insertMiddleNode(linkedlist_h* L, listNode* pre, char* x){
+void insertMiddleNode(linkedList_h* L, listNode* pre, char* x){
 	listNode* newNode;
 	newNode = (listNode*)malloc(sizeof(listNode));
 	strcpy(newNode->data, x);
@@ -56,18 +49,27 @@ void insertMiddleNode(linkedlist_h* L, listNode* pre, char* x){
 	}
 }
 
-void insertLastNode(linkedlist_h* L, char* x){
+void insertLastNode(linkedList_h* L, char* x){
 	listNode* newNode;
 	listNode* temp;
 	newNode = (listNode*)malloc(sizeof(listNode));
 	strcpy(newNode->data, x);
 	newNode->link = NULL;
-	if(L->head = NULL){
+	if(L->head == NULL){
 		L->head = newNode;
 		return;
 	}
 
-	temp = head;
-	while (temp-> link !=NULL) temp = temp->link;
+	temp = L->head;
+	while (temp->link !=NULL) temp = temp->link;
 	temp->link = newNode;
+}
+void deletelinkedList_h(linkedList_h* L){
+	listNode* p;
+	while(L->head!=NULL){
+		p = L->head;
+		L->head = L->head->link;
+		free(p);
+		p = NULL;
+	}
 }
