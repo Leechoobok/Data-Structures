@@ -1,0 +1,18 @@
+#pragma once
+
+typedef struct ListNode {
+	char data[4];
+	struct ListNode* link;
+} listNode;
+
+typedef struct {
+	listNode* head;
+} linkedList_h;
+
+linkedList_h* createLinkedList_h(void);
+void freeLinkedList_h(linkedList_h* L);
+void printList(linkedList_h *L);
+void insertFirstNode(linkedlist_h* L, char* x);
+void insertMiddleNode(linkedlist_h* L, listNode* pre, char* x);
+void insertLastNode(linkedlist_h* L, char* x);
+
