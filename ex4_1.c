@@ -20,7 +20,7 @@ int main(){
 	printList(L);
 
 	printf("\n(5) 리스트 공간을 해제하여 공백 리스트로 만들기! \n");
-	deletelinkedList_h(L);
+	freelinkedList_h(L);
 	printList(L);
 
 	getchar(); return 0;

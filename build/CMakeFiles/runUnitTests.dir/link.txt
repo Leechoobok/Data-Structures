@@ -1,0 +1,1 @@
+/usr/bin/c++ CMakeFiles/runUnitTests.dir/gtest.cpp.o CMakeFiles/runUnitTests.dir/InsertLinkedList.c.o -o runUnitTests  /usr/local/lib/libgtest_main.a /usr/local/lib/libgtest.a 

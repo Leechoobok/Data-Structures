@@ -1,0 +1,4 @@
+/home/ubuntu/project/ch4/build/CMakeFiles/runUnitTests.dir
+/home/ubuntu/project/ch4/build/CMakeFiles/test.dir
+/home/ubuntu/project/ch4/build/CMakeFiles/edit_cache.dir
+/home/ubuntu/project/ch4/build/CMakeFiles/rebuild_cache.dir

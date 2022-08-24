@@ -3,6 +3,11 @@
 #include <stdio.h>
 #include "InsertLinkedList.h"
 
+
+
+
+
+
 linkedList_h* createLinkedList_h(void){
 	linkedList_h* L;
 	L = (linkedList_h*)malloc(sizeof(linkedList_h));
@@ -64,7 +69,7 @@ void insertLastNode(linkedList_h* L, char* x){
 	while (temp->link !=NULL) temp = temp->link;
 	temp->link = newNode;
 }
-void deletelinkedList_h(linkedList_h* L){
+void freelinkedList_h(linkedList_h* L){
 	listNode* p;
 	while(L->head!=NULL){
 		p = L->head;
@@ -73,3 +78,59 @@ void deletelinkedList_h(linkedList_h* L){
 		p = NULL;
 	}
 }
+void deleteNode(linkedList_h* L, listNode* p){
+	listNode* pre;
+	if(L->head == NULL) return;
+	if(L->head->link == NULL){
+		free(L->head);
+		L-> head=NULL;
+		return;
+	}
+	else if(p==NULL) return;
+
+	else { 
+		pre = L->head;
+		while(pre->link != p){
+			pre = pre->link;
+		}
+		pre->link = p->link;
+		free(p);
+	}
+}
+listNode* searchNode(linkedList_h* L, char* x){
+	listNode* temp;
+	temp = L->head;
+	while(temp != NULL){
+		if(strcmp(temp->data, x) == 0) return temp;
+		else temp = temp->link;
+	}
+	return temp;
+}
+
+void reverse(linkedList_h* L){
+
+	listNode* p;
+	listNode* q;
+	listNode* r;
+
+	p = L->head;
+	q = NULL;
+	r = NULL;
+
+	while(p!=NULL){
+		r = q;
+		q = p;
+		p = p->link;
+		q->link=r;
+	}
+	L->head = q;
+}
+
+
+
+
+
+
+
+
+
