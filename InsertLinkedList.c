@@ -78,16 +78,18 @@ void freelinkedList_h(linkedList_h* L){
 		p = NULL;
 	}
 }
+
 void deleteNode(linkedList_h* L, listNode* p){
 	listNode* pre;
 	if(L->head == NULL) return;
+
+
 	if(L->head->link == NULL){
 		free(L->head);
 		L-> head=NULL;
 		return;
 	}
 	else if(p==NULL) return;
-
 	else { 
 		pre = L->head;
 		while(pre->link != p){
@@ -97,6 +99,8 @@ void deleteNode(linkedList_h* L, listNode* p){
 		free(p);
 	}
 }
+
+
 listNode* searchNode(linkedList_h* L, char* x){
 	listNode* temp;
 	temp = L->head;

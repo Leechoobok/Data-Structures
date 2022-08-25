@@ -1,10 +1,10 @@
-app2.out: ex4_2.o InsertLinkedList.o
-	gcc -o app2.out ex4_2.o InsertLinkedList.o
+app3.out: ex4_3.o CircularLinkedList.o
+	gcc -o app3.out ex4_3.o CircularLinkedList.o
 
-main.o: ex4_2.c
-	gcc -c -o ex4_2.o ex4_2.c
-InsertLinkedList.o: InsertLinkedList.c
-	gcc -c -o InsertLinkedList.o InsertLinkedList.c
+main.o: ex4_3.c
+	gcc -g -c -o ex4_3.o ex4_3.c
+CircularLinkedList.o: CircularLinkedList.c
+	gcc -g -c -o CircularLinkedList.o CircularLinkedList.c
 
 
 clean:
