@@ -1,6 +1,6 @@
 #pragma once
 
-float coef;
+//float coef;
 typedef struct ListNode{
 	float coef;
 	int expo;

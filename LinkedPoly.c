@@ -40,6 +40,10 @@ void addPoly(ListHead* A, ListHead* B, ListHead* C){
 			appendTerm(C, sum, pA->expo);
 			pA = pA->link; pB=pB->link;
 		}
+		else if (pA->expo > pB->expo){
+			appendTerm(C, pA->coef, pA->expo);
+			pA = pA->link;
+		}
 		else {
 			appendTerm(C, pB->coef, pB->expo);
 			pB=pB->link;
