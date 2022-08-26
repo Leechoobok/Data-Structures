@@ -33,20 +33,22 @@ void addPoly(ListHead* A, ListHead* B, ListHead* C){
 	ListNode* pA = A->head;
 	ListNode* pB = B->head;
 	float sum;
-
+	
 	while(pA && pB){
 		if(pA->expo == pB->expo){
 			sum = pA->coef + pB->coef;
 			appendTerm(C, sum, pA->expo);
-			pA = pA->link; pB=pB->link;
+			pA = pA->link;
+			pB=pB->link;
 		}
-		else if (pA->expo > pB->expo){
+		else if(pA->expo > pB->expo){
 			appendTerm(C, pA->coef, pA->expo);
 			pA = pA->link;
 		}
 		else {
 			appendTerm(C, pB->coef, pB->expo);
 			pB=pB->link;
+
 		}
 	}
 
@@ -54,7 +56,7 @@ void addPoly(ListHead* A, ListHead* B, ListHead* C){
 		appendTerm(C, pA->coef, pA->expo);
 
 	for(;pB != NULL; pB=pB->link)
-		appendTerm(C, pB->coef, pA->expo);
+		appendTerm(C, pB->coef, pB->expo);
 }
 
 void printPoly(ListHead* L){
